@@ -29,6 +29,7 @@ foreach($grades as $grade){
 }
 
 $average = $total / count($grades);
+$averageRemark = remarks($average);
 
 
 function equivalent($grade){
@@ -261,7 +262,7 @@ echo number_format($average,2);
 
 <?php
 
-echo remarks($average);
+echo $averageRemark;
 
 ?>
 
