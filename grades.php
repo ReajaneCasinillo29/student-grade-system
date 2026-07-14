@@ -283,6 +283,8 @@ echo remarks($average);
 
 <?php
 
+ksort($grades);
+
 echo count($grades);
 
 ?>
