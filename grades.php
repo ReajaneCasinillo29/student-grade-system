@@ -330,6 +330,11 @@ echo remarks($average);
 
 ?>
 
+<p>
+Equivalent:
+<strong><?php echo equivalent($average); ?></strong>
+</p>
+
 </h1>
 
 </div>
