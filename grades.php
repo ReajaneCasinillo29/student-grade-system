@@ -135,7 +135,7 @@ Logged in as
 
 <strong>
 
-<?php echo $user; ?>
+<?php echo htmlspecialchars($user, ENT_QUOTES, 'UTF-8'); ?>
 
 </strong>
 
