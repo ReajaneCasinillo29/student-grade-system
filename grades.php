@@ -29,6 +29,7 @@ foreach($grades as $grade){
 }
 
 $average = $total / count($grades);
+$averageRemark = remarks($average);
 
 
 function equivalent($grade){
@@ -55,6 +56,14 @@ function remarks($grade){
 
     return "FAILED";
 
+}
+
+$passed = 0;
+
+foreach ($grades as $grade) {
+    if ($grade >= 75) {
+        $passed++;
+    }
 }
 
 ?>
@@ -135,7 +144,7 @@ Logged in as
 
 <strong>
 
-<?php echo $user; ?>
+<?php echo htmlspecialchars($user, ENT_QUOTES, 'UTF-8'); ?>
 
 </strong>
 
@@ -261,7 +270,7 @@ echo number_format($average,2);
 
 <?php
 
-echo remarks($average);
+echo $averageRemark;
 
 ?>
 
@@ -282,6 +291,8 @@ echo remarks($average);
 <h1>
 
 <?php
+
+ksort($grades);
 
 echo count($grades);
 
@@ -319,8 +330,18 @@ echo remarks($average);
 
 ?>
 
+<p>
+Equivalent:
+<strong><?php echo equivalent($average); ?></strong>
+</p>
+
 </h1>
 
+</div>
+
+<div class="card">
+    <h3>Passed Subjects</h3>
+    <h1><?php echo $passed; ?></h1>
 </div>
 
 </div>
