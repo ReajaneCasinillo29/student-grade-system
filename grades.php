@@ -58,6 +58,14 @@ function remarks($grade){
 
 }
 
+$passed = 0;
+
+foreach ($grades as $grade) {
+    if ($grade >= 75) {
+        $passed++;
+    }
+}
+
 ?>
 <!DOCTYPE html>
 
@@ -324,6 +332,11 @@ echo remarks($average);
 
 </h1>
 
+</div>
+
+<div class="card">
+    <h3>Passed Subjects</h3>
+    <h1><?php echo $passed; ?></h1>
 </div>
 
 </div>
